@@ -1,0 +1,44 @@
+.card{
+    text-align: center;
+}
+.eat {
+    background: url("../images/bg.png") center center /cover no-repeat;
+    height: 100vh;
+}
+
+.eat__wrapper {
+    width: 1200x;
+    margin: auto;
+    border: 1px solid green;
+}
+
+.eat__title {
+    color: #fff;
+    margin-top: 45px;
+    text-shadow: 0 1px 0 #000000;
+    color: #ffffff;
+    font-family: "Exo";
+    font-size: 36px;
+    font-weight: 400;
+    text-align: center;
+    margin:auto;
+}
+
+.card__name {
+    color: #000000;
+    font-family: "Trebuchet MS";
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.eat__list {
+    display: flex;
+    margin-left:20px;
+}
+
+.eat__item {
+    background: url("../images/test.svg") center center/cover no-repeat;
+    min-width: 320px;
+    min-height: 480px;
+    margin-right:80px ;
+}
