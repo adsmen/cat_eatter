@@ -19,15 +19,46 @@ $().ready(function(){
         $(control).find(".card__title").removeClass("card__title--active");          
     });
 
-    $("#fuagra").on('click', function(){
-        $("#fuagra").parent().toggleClass("eat__item--active");
-    })
-
-    $("#fish").on("click", function(){
-        $("#fish").parent().toggleClass("eat__item--active");
+    /// события для кнопки фуагра
+    $("#fuagraBtn").on('click', function(){
+        setBlockSelected('fuagraBtn','fuagra');
     });
 
-    $("#chicken").on("click", function(){
-        $("#chicken").parent().toggleClass("eat__item--active");
-    })
+    $("#fuagraBtn").mouseenter(function(){        
+        toggleClassToButton('#fuagraBtn', 'eat__item--active','card__logo-size--hover');
+    });
+
+    $("#fuagraBtn").mouseleave(function(){
+        toggleClassToButton('#fuagraBtn', 'eat__item--active','card__logo-size--hover',true);
+    });
+
+    // события для кнопки рыба
+    $("#fishBtn").on('click', function(){
+        setBlockSelected('fishBtn','fish');
+    });
+
+    $("#chickenBtn").on('click', function(){
+        setBlockSelected('chickenBtn', 'chicken');
+    });
 });
+
+
+
+function toggleClassToButton(controlToSearch, classToCheck, classToAdd, isDelet){
+    let control = $(controlToSearch);
+    // если текущий item не выбран, тогда у него должен появиться hover эффект
+    if (!control.hasClass(classToCheck)){
+        if (isDelet){
+            control.removeClass(classToAdd);
+        }else{
+            control.addClass(classToAdd);
+        }
+        
+    }
+}
+
+function setBlockSelected(controlId, blockId){
+    let currentControl = $('#' + controlId);    
+    $(currentControl.parents()).find('#' + blockId).toggleClass("eat__item--active");
+    currentControl.toggleClass('card__logo-size--selected');
+}

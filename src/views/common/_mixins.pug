@@ -1,13 +1,13 @@
 mixin list
     ul.eat__list
-        +item('Сказочное заморское яство','Нямушка',' с фуа-гра','10 порций','мышь в подарок','fuagra')    
-        +item('Сказочное заморское яство','Нямушка',' с рыбой','40 порций','2 мыши в подарок','fish')
-        +item('Сказочное заморское яство','Нямушка',' с курой','100 порций','5 мышей в подарок','chicken', true, 'заказчик доволен')
+        +item('Сказочное заморское яство','Нямушка',' с фуа-гра','10 порций','мышь в подарок','fuagra', 'fuagraBtn')    
+        +item('Сказочное заморское яство','Нямушка',' с рыбой','40 порций','2 мыши в подарок','fish', 'fishBtn')
+        +item('Сказочное заморское яство','Нямушка',' с курой','100 порций','5 мышей в подарок','chicken', 'chickenBtn', true, 'заказчик доволен')
 
 
-mixin item(title, nameTitle, nameSubTitle, eatCount , eatTitle, elementId, isEatDesc, eatDesc)
-    li.eat__item
-        .card(id=`${elementId}`)
+mixin item(title, nameTitle, nameSubTitle, eatCount , eatTitle, blockId, elementId, elementBtnId, isEatDesc, eatDesc)
+    li.eat__item(id=`${blockId}`)
+        .card
             .card__title #{title}
             .card__name
                 span.card__name-title #{nameTitle} <br/>
@@ -16,8 +16,9 @@ mixin item(title, nameTitle, nameSubTitle, eatCount , eatTitle, elementId, isEat
                 span #{eatCount} <br/>
                 span #{eatTitle}              
                 if isEatDesc
-                    <br/>
                     p #{eatDesc}                                                                                                                                                                                                                                                                                                                                                                                                                                      
             .card__logo
                 img(src="./assets/images/cot.png", alt="" class="card__logo-img")
-                img(src="./assets/images/by05.png", alt="" class="card__logo-size" id=`${elementId}`)
+                .card__logo-size(id=`${elementId}`)
+
+                //- img(src="./assets/images/sprite-05.png", alt="" class="card__logo-size" id=`${elementId}`)

@@ -53,11 +53,22 @@
 }
 
 .card__logo-size{
+    display: inline-block; 
+    background: url('../images/sprite-05.png') no-repeat; 
+    overflow: hidden; 
+    text-indent: -9999px; 
+    text-align: left;
+    background-position: -10px -0px; 
+    width: 81px; 
+    height: 81px;
     position: absolute;
     bottom: 13px;
     right: 17px;
     cursor: pointer;
-    &:hover{
-        filter: grayscale(.2);
+    &--hover{
+        background-position: -10px -91px;
+    }
+    &--selected{
+        background-position: -10px -182px;
     }
 }
