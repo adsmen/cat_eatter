@@ -37,9 +37,27 @@ $().ready(function(){
         setBlockSelected('fishBtn','fish');
     });
 
+    $("#fishBtn").mouseenter(function(){
+        toggleClassToButton('#fishBtn','eat__item--active','card__logo-size--hover');
+    });
+
+    $("#fishBtn").mouseleave(function(){
+        toggleClassToButton('#fishBtn','eat__item--active','card__logo-size--hover', true);
+    });
+
+
     $("#chickenBtn").on('click', function(){
         setBlockSelected('chickenBtn', 'chicken');
     });
+
+    $("#chickenBtn").mouseenter(function(){
+        toggleClassToButton('#chickenBtn','eat__item--active','card__logo-size--hover');
+    });
+
+    $("#chickenBtn").mouseleave(function(){
+        toggleClassToButton('#chickenBtn','eat__item--active','card__logo-size--hover',true);
+    });
+
 });
 
 

@@ -65,6 +65,14 @@
     bottom: 13px;
     right: 17px;
     cursor: pointer;
+    &--fish{
+        background: url('../images/sprite-02.png') no-repeat; 
+        background-position: -10px -0px; 
+    }
+    &--chicken{
+        background: url('../images/sprite-5.png') no-repeat; 
+        background-position: -10px -0px; 
+    }
     &--hover{
         background-position: -10px -91px;
     }

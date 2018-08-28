@@ -19,6 +19,16 @@ mixin item(title, nameTitle, nameSubTitle, eatCount , eatTitle, blockId, element
                     p #{eatDesc}                                                                                                                                                                                                                                                                                                                                                                                                                                      
             .card__logo
                 img(src="./assets/images/cot.png", alt="" class="card__logo-img")
-                .card__logo-size(id=`${elementId}`)
+                if blockId == "fuagra"
+                    .card__logo-size(id=`${elementId}`)
+                else if blockId == "fish"
+                    .card__logo-size.card__logo-size--fish(id=`${elementId}`)
+                else if blockId == "chicken"
+                    .card__logo-size.card__logo-size--chicken(id=`${elementId}`)
+                    
+                //- if elementId = "fish"
+                //-     .card__logo-size.card__logo-size--fish(id=`${elementId}`)
+                //- if elementId = "chicken"
+                //-     .card__logo-size.card__logo-size--chicken(id=`${elementId}`)
 
                 //- img(src="./assets/images/sprite-05.png", alt="" class="card__logo-size" id=`${elementId}`)
