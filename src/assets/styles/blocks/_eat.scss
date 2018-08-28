@@ -1,13 +1,10 @@
-.card{
-    text-align: center;
-}
 .eat {
     background: url("../images/bg.png") center center /cover no-repeat;
     height: 100vh;
 }
 
 .eat__wrapper {
-    width: 1200x;
+    width: 1200px;
     margin: auto;
     border: 1px solid green;
 }
@@ -24,12 +21,7 @@
     margin:auto;
 }
 
-.card__name {
-    color: #000000;
-    font-family: "Trebuchet MS";
-    font-size: 48px;
-    font-weight: 700;
-}
+
 
 .eat__list {
     display: flex;
@@ -41,4 +33,7 @@
     min-width: 320px;
     min-height: 480px;
     margin-right:80px ;
+    &--active{
+        background: url("../images/test-active.svg") center center/cover no-repeat;
+    }
 }

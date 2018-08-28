@@ -1,6 +1,14 @@
 .card {
     font-family: "Trebuchet MS";
     color: #666666; 
+    text-align: center;
+}
+
+.card__name {
+    color: #000000;
+    font-family: "Trebuchet MS";
+    font-size: 48px;
+    font-weight: 700;
 }
 
 .card__title {
@@ -8,6 +16,12 @@
     font-weight: 400;
     text-align: center;
     padding-top: 30px;
+    &--active{
+        color: #e62e7a;     
+        text-align: left;
+        padding-left:60px;
+        // font-size: 32px;
+    }    
 }
 
 .card__description {
@@ -29,7 +43,21 @@
     padding: 40px 60px;
 }
 
+.card__logo{
+    position: relative;
+}
+
 .card__logo-img {
     width: 313px;
-    height: 244px;
+    height: 215px;
+}
+
+.card__logo-size{
+    position: absolute;
+    bottom: 13px;
+    right: 17px;
+    cursor: pointer;
+    &:hover{
+        filter: grayscale(.2);
+    }
 }

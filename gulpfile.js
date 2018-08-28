@@ -12,7 +12,7 @@ const reload = browserSync.reload;
 
 const srcPath = {
     templates:{
-        src: "./src/views/**/*.pug", 
+        src: "./src/views/**", 
         dist: "./dist"
     }, 
     styles:{
@@ -23,12 +23,16 @@ const srcPath = {
         src: "./src/assets/images/**",
         dist: "./dist/assets/images"
     },
+    scripts:{
+        src: "./src/assets/js/**",
+        dist: "./dist/assets/js"
+    },
     root : "./dist"
 
 }
 
 gulp.task('default', gulp.series(
-    gulp.parallel(styles,templates,copyImage), 
+    gulp.parallel(styles,templates,copyImage,copyJs), 
     gulp.parallel(watch, server)
 ));
 
@@ -36,6 +40,7 @@ gulp.task('default', gulp.series(
 function watch(){
     gulp.watch(srcPath.styles.src,styles);
     gulp.watch(srcPath.templates.src, templates);
+    gulp.watch(srcPath.scripts.src,copyJs);
 }
 
 
@@ -63,6 +68,12 @@ function copyImage(){
         .pipe(gulp.dest(srcPath.images.dist));
 }
 
+function copyJs(){
+    return gulp.src(srcPath.scripts.src)
+        .pipe(gulp.dest(srcPath.scripts.dist)); 
+}
+
 exports.styles = styles;
+exports.copyJs = copyJs;
 exports.templates = templates;
 exports.copyImage = copyImage;
